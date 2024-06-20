@@ -112,13 +112,13 @@ const Campaign = () => {
             <div className="flex items-center pb-4 justify-end ml-auto">
               <div className="relative">
                 <input
-                  className="p-2 mt-2 pr-10 rounded border-[1px] border-[#999999] bg-[#FFFFFA] focus:outline-none focus:border-[#999999] w-full"
+                  className="p-2 mt-4 mx-3 pr-10 rounded  border-[1px] border-[#999999] bg-[#FFFFFA] focus:outline-none focus:border-[#999999] w-full"
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="search..."
                 />
-                <img src={search} alt="" className="absolute right-2 top-7 transform -translate-y-1/2" />
+                <img src={search} alt="" className="absolute right-2 top-10 transform -translate-y-1/2" />
               </div>
               <div className="flex items-center ml-4">
                 <label htmlFor="dateRange" className="mr-2">Date Range</label>

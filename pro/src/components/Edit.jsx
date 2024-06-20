@@ -24,6 +24,7 @@ const Edit = () => {
 
   const formik = useFormik({
     initialValues: {
+      id: parseInt(id),
       campaignName: '',
       campaignDescription: '',
       startDate: '',
@@ -38,9 +39,10 @@ const Edit = () => {
         const response = await fetch(`https://infinion-test-int-test.azurewebsites.net/api/Campaign/${id}`, {
           method: 'PUT',
           headers: {
+            'Accept': '*/*',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(values),
+          
         });
 
         if (!response.ok) {
@@ -59,11 +61,12 @@ const Edit = () => {
   useEffect(() => {
     if (data) {
       formik.setValues({
+        id: parseInt(id),
         campaignName: data.campaignName,
         campaignDescription: data.campaignDescription,
         startDate: data.startDate,
         endDate: data.endDate,
-        digestCampaign: data.digestCampaign,
+        digestCampaign: false,
         linkedKeywords: data.linkedKeywords || [''],
         dailyDigest: data.dailyDigest,
       });

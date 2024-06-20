@@ -12,8 +12,8 @@ function Sidebar() {
   return (
     <div className="bg-[#F0F4F4] text-[#455454] w-64 py-8 px-4 flex flex-col items-center fixed h-screen">
       {/* Logo */}
-      <div className="mb-8 flex items-center py-2 px-8">
-        <img src={Logo} alt="Logo" className="h-12" /> <div className=' font-bold'>Scrutz</div>
+      <div className="mb-8 flex items-center py-2 px-3">
+        <img src={Logo} alt="Logo" className="h-12 px-5 pt-2" /> <div className=' font-bold text-[30px]'>Scrutz</div>
       </div>
 
       {/* Links */}

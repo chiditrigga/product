@@ -6,14 +6,18 @@ export default function Modal({ campaignId, campaignName, onClose, deleteCampaig
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
-  const handleDelete = () => {
-    deleteCampaign.mutate(campaignId, {
-      onSuccess: () => {
-        setOpen(false); // Close the modal
-        onClose(); // Close the modal
-        alert('Campaign deleted successfully!');
-      },
-    });
+  const handleDelete = async () => {
+    try {
+      await deleteCampaign.mutateAsync(campaignId);
+   
+     
+    } catch (error) {
+      console.error('Error deleting campaign:', error);
+      setOpen(false);
+      onClose();
+      window.location.reload();
+      
+    }
   };
 
   return (

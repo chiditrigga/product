@@ -34,11 +34,13 @@ const CampaignDetails = () => {
     },
     onSubmit: async (values) => {
       console.log(values);
+    
       try {
         const response = await fetch(`https://infinion-test-int-test.azurewebsites.net/api/Campaign/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
+            'Accept': '*/*',
           },
           body: JSON.stringify(values),
         });
